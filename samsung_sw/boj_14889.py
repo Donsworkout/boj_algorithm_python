@@ -7,24 +7,44 @@ arr = []
 members = []
 results = []
 
+
+def combination_by_don(mbs, s):
+    reversed_arr = set()
+    vc = []
+
+    def comb():
+        if len(vc) == s:
+            converted = tuple([mbs[e] for e in vc])
+            if converted not in reversed_arr:
+                converted_r = tuple(sorted(list(set(members) - set(converted))))
+                add_cases = itertools.permutations(list(converted), 2)
+                team1 = 0
+                for add_case in add_cases:
+                    team1 += arr[add_case[0]][add_case[1]]
+
+                add_cases_r = itertools.permutations(list(converted_r), 2)
+                team2 = 0
+                for add_case_r in add_cases_r:
+                    team2 += arr[add_case_r[0]][add_case_r[1]]
+
+                reversed_arr.add(converted_r)
+                results.append(abs(team1 - team2))
+                return
+
+        start = vc[-1] + 1 if vc else 0
+        for k in range(start, n):
+            vc.append(k)
+            comb()
+            vc.pop()
+    comb()
+
+
 for _ in range(n):
     arr.append(list(map(int, input().split())))
 
 for i in range(n):
     members.append(i)
 
-all_cases = list(itertools.combinations(members, n//2))
+combination_by_don(members, n//2)
 
-for case in all_cases:
-    add_cases = itertools.permutations(case, 2)
-    team1 = 0
-    for add_case in add_cases:
-        team1 += arr[add_case[0]][add_case[1]]
-
-    left_case = tuple(set(members) - set(case))
-    left_add_cases = itertools.permutations(left_case, 2)
-    team2 = 0
-    for left_add_case in left_add_cases:
-        team2 += arr[left_add_case[0]][left_add_case[1]]
-    results.append(abs(team1 - team2))
 print(min(results))
