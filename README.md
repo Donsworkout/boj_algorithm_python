@@ -12,6 +12,12 @@ PYTHON X ALGORITHM
       for key,val in Dic.items(): 
       이런식으로 고고
       
+#### 1.2 리스트 
+      1) 리스트 중복 제거시 
+        list(set(arr)) 이런식으로 하면 중복 제거됨
+      2) 리스트에 빈 문자열 지우기
+        arr = [x for x in old_arr if x] 
+        이렇게 하면 빈 문자열 조져줌 
 
 ### 2. 모듈  
 #### 2.1 collections
@@ -31,3 +37,9 @@ PYTHON X ALGORITHM
       그러나, deque는 그냥 
       new_one = collections.deque(list(old_one)) 
       하면 됨
+      
+#### 2.2 itertools
+      1) Combinations, Permutations
+      import itertools 하고
+      itertools.combinations(arr,3) 
+      이런식으로 쓰면 조합 다 구해줌 개꿀
