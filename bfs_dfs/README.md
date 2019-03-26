@@ -1,4 +1,4 @@
-[목록으로](https://github.com/Donsworkout/boj_algorithm_python/blob/master/README.md'=)
+[목록으로](https://github.com/Donsworkout/boj_algorithm_python/blob/master/README.md)
 
 ## BFS / DFS
 ### BFS
