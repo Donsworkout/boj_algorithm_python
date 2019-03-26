@@ -80,8 +80,8 @@ print(set1 ^ set2)
 ### 3. 알고리즘 오답노트
 #### 3.1 백트래킹 
 ##### 백트래킹 재귀 개념때매 약간 헷깔리는데, 프로그램은 스택 구조로 호출되는 것을 계속 인식하자!
-    1) 백트래킹 - 순열 (permutations)
-    물론 파이썬 내장 모듈을 끌어 쓸 수 있음, 다만 응용 문제는 이걸로는 안됨
+##### 3.1.1 백트래킹 - 순열 (permutations)
+    파이썬 내장 모듈을 끌어 쓸 수 있음, 다만 응용 문제는 이걸로는 안됨
 ##### 소스 코드
 ~~~python
 
@@ -109,7 +109,7 @@ def permutation():
                       
 ~~~
 
-    2) 백트래킹 - 조합 (combinations)
+##### 3.1.2 백트래킹 - 조합 (combinations)
     permutations 와 비슷하지만, 이 친구는 임시 조합(vc) 의 최근 원소보다 뒤에 것을 고른다
 ##### 소스 코드
 ~~~python 
@@ -134,3 +134,6 @@ n, m = map(int, input().split())
 vc = []
 combination()
 ~~~
+
+#### 3.2 DFS와 BFS
+[상세보기](https://github.com/Donsworkout/boj_algorithm_python/blob/master/bfs_dfs/DFS_practice.py)
