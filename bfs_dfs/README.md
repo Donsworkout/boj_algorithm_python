@@ -1,4 +1,5 @@
-[목록으로]('https://github.com/Donsworkout/boj_algorithm_python/blob/master/README.md')
+[목록으로](https://github.com/Donsworkout/boj_algorithm_python/blob/master/README.md'=)
+
 ## BFS / DFS
 ### BFS
 - BFS는 층을 기반으로 센다 (거리)
