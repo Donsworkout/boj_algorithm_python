@@ -5,6 +5,7 @@ input = sys.stdin.readline
 def permutation():
     if len(vc) == m:
         print(*vc, sep=' ')
+        return
     for elem in candidates:
         if not visited[elem]:
             visited[elem] = 1

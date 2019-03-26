@@ -108,3 +108,29 @@ def permutation():
             visited[elem] = 0
                       
 ~~~
+
+    2) 백트래킹 - 조합 (combinations)
+    permutations 와 비슷하지만, 이 친구는 임시 조합(vc) 의 최근 원소보다 뒤에 것을 고른다
+##### 소스 코드
+~~~python 
+def combination():
+    # 지정 길이 되면 뱉어버리는 것은 순열과 동일
+    if len(vc) == m:
+        print(*vc, sep=' ')
+        return
+    # 임시배열에 아무것도 없으면 처음부터 아무거나 골라도 된다는 뜻
+    if not vc:
+        start = 1
+    # 그러나 앞에 고른게 있음 그거 이상 수만 나와야 해 (수는 정렬된 형태라 가정)
+    else:
+        start = vc[-1] + 1
+    # visited 안쓰고 최근의 쓴놈 이상의 값만 append!
+    for elem in range(start, n+1):
+        vc.append(elem)
+        combination()
+        vc.pop()
+
+n, m = map(int, input().split())
+vc = []
+combination()
+~~~
