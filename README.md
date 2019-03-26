@@ -136,4 +136,4 @@ combination()
 ~~~
 
 #### 3.2 DFS와 BFS
-[상세보기](https://github.com/Donsworkout/boj_algorithm_python/blob/master/bfs_dfs/DFS_practice.py)
+[상세보기](https://github.com/Donsworkout/boj_algorithm_python/blob/master/bfs_dfs/README.md)
