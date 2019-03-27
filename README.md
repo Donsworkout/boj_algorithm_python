@@ -136,4 +136,7 @@ combination()
 ~~~
 
 #### 3.2 DFS와 BFS
-[상세보기](https://github.com/Donsworkout/boj_algorithm_python/blob/master/bfs_dfs/README.md)
+[상세보기](https://github.com/Donsworkout/boj_algorithm_python/blob/master/bfs_dfs)
+
+#### 3.3 다이나믹 프로그래밍
+[상세보기](https://github.com/Donsworkout/boj_algorithm_python/tree/master/dynamic_programming)
