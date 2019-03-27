@@ -5,6 +5,7 @@ Created on Thu Jan 17 00:23:51 2019
 
 @author: donsdev
 """
+#스택
 import sys
 input = sys.stdin.readline
 

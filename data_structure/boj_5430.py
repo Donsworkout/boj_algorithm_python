@@ -5,6 +5,7 @@ Created on Thu Jan 24 15:10:35 2019
 
 @author: donsdev
 """
+#DEQUE 관련 문제
 #import sys
 #input = sys.stdin.readline
 n = int(input())

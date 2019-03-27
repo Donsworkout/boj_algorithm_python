@@ -6,7 +6,9 @@ Created on Wed Feb  6 13:47:31 2019
 @author: donsdev
 """
 #문제 풀이 중 입니다 (홍대 c)
-"""
+import sys
+input = sys.stdin.readline
+
 arr = [-1]*10001
 for _ in range(int(input())):
     x, y = map(int,input().split())
@@ -17,4 +19,3 @@ for elem in arr:
     if elem == True:
         cnt += 1
 print(cnt)
-"""
