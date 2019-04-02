@@ -1,46 +1,49 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Feb 19 00:47:13 2019
+import sys
+from collections import deque
+input = sys.stdin.readline
 
-@author: donsdev
-"""
 
-def graph_maker(a,b):
-    if a not in graph:
-        graph[a] = [b]
-    else:
-        graph[a].append(b)
-        
-def DFS(cur):
-    if cur not in visited:
-        visited.append(cur)
-        if cur in graph:
-            graph[cur].sort()
-            for child in graph[cur]:
-                DFS(child)
+def graph_maker(a, b):
+    graph[a].append(b)
 
-def BFS():
-    visited = []
-    global queue
+
+def dfs(cur):
+    p_v.append(cur)
+    visited[cur] = 1
+    for elem in sorted(graph[cur]):
+        if not visited[elem]:
+            dfs(elem)
+
+
+def bfs():
     while queue:
-        cur = queue.pop(0)
-        visited.append(cur)
-        graph[cur].sort()
-        for child in graph[cur]:
-            if child not in visited and child not in queue:
-                queue.append(child)
-    print(*visited, sep=' ')
-    
-n,m,v = map(int,input().split())
+        len_q = len(queue)
+        for _ in range(len_q):
+            cur = queue.popleft()
+            for elem in sorted(graph[cur]):
+                if not visited[elem]:
+                    queue.append(elem)
+                    p_v.append(elem)
+                    visited[elem] = 1
+    print(*p_v, sep=' ')
+
+
+n, m, v = map(int,input().split())
 graph = {}
-visited = []
+for i in range(n):
+    graph[i+1] = []
+visited = [0] * (n+1)
 for _ in range(m):
-    a,b = map(int,input().split())
-    graph_maker(a,b)
-    graph_maker(b,a)
-DFS(v)
-print(*visited, sep=' ')
-queue = [v]
-BFS()  
-    
+    a, b = map(int,input().split())
+    graph_maker(a, b)
+    graph_maker(b, a)
+
+p_v = []
+dfs(v)
+print(*p_v, sep=' ')
+
+visited = [0] * (n+1)
+p_v = [v]
+visited[v] = 1
+queue = deque([v])
+bfs()
