@@ -1,1 +1,3 @@
-print(-1 % 4)
+arr = [(0,1),(0,1)]
+arr.remove((0,1))
+print(arr)
