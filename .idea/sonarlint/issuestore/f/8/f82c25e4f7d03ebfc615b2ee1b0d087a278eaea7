@@ -1,0 +1,5 @@
+
+lpython:S3776
+"TRefactor this function to reduce its Cognitive Complexity from 18 to the 15 allowed.(Ú©ÐË
+dpython:S1542
+"LRename function "BFS" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(Ú©ÐË
